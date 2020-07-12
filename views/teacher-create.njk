@@ -1,0 +1,100 @@
+
+{% extends "layout.njk" %}
+
+
+{% block content %}
+    
+    
+
+    <form class="card" method="POST" action="/teachers" >
+   
+
+        
+
+        <section 
+        class="image" 
+        style ="background: url('') no-repeat">
+        </section>
+
+        <section class="details">
+
+            <p> Novo Instrutor</p>
+
+            <div class="item">
+                <div>Avatar URL</div>
+                    <div>
+                    <input 
+                    placeholder="https://"
+                    type="url" 
+                    name="avatar_url"
+                    >
+                    </div>
+            </div>
+            
+            <div class="item">
+                <div>Nome Completo</div>
+                <div>
+                    <input 
+                    type="text" 
+                    name="name"
+                    >
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento</div>
+                <div>
+                     <input 
+                    type="date" 
+                    name="birth"
+                    >
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Grau de Escolaridade</div>
+                <div>
+                    <select name="escolaridade">
+                        <option value="medioCompleto">Ensino Médio Completo</option>
+                        <option value="superiorCompleto">Ensino Superior Completo</option>
+                        <option value="mestrado">Mestrado</option>
+                        <option value="doutorado">Doutorado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Tipo de Aula</div>
+                
+                    <div id="label">
+                        <div>
+                            <input type="radio" id="presencial" name="tipo_aula" value="presencial" checked>
+                            <label for="presencial">Presencial</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="ead" name="tipo_aula" value="ead">
+                            <label for="ead">EAD</label>
+                        </div>
+                    </div>
+            </div>
+
+
+            
+
+            <div class="item">
+                <div>Matérias</div>
+                <div>
+                     <input 
+                     placeholder="Separe por virgula"
+                    type="text" 
+                    name="materias"
+                    >
+                </div>
+            </div>
+
+           <button type="submit">Salvar</button>
+
+        </section>
+    </form>
+{% endblock content %}

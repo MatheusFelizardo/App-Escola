@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+{% block title %}
+    <title>App Escola</title>
+{% endblock title %}
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    
+    {% block styles %}
+        <link rel="stylesheet" href="/styles/style.css">
+    {% endblock styles %}
+    
+    
+
+</head>
+
+
+
+<body>  
+
+    <div>
+    <header>
+            <a href="/teachers" id="techer">Teacher</a>
+            <a href="/students" id="students">Students</a>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    </div>
+    
+    <footer class="footer"></footer>
+    
+
+{% block scripts %}
+{% endblock scripts %}    
+
+</body>
+</html>
