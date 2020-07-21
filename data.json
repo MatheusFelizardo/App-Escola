@@ -1,33 +1,13 @@
 {
   "teachers": [
     {
-      "id": 1,
-      "name": "dsadas",
-      "avatar_url": "https://google.com.br",
-      "birth": -27103075200000,
-      "escolaridade": "medioCompleto",
-      "tipo_aula": "presencial",
-      "materias": "adsdas",
-      "created_at": 1594600651205
-    },
-    {
-      "id": 2,
-      "name": "dsadas",
-      "avatar_url": "https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80/500x700",
-      "birth": -27103075200000,
-      "escolaridade": "medioCompleto",
-      "tipo_aula": "ead",
-      "materias": "adsdas",
-      "created_at": 1594600668508
-    },
-    {
-      "id": 3,
+      "id": "3",
       "name": "Matheus Felizardo",
       "avatar_url": "https://source.unsplash.com/collection/11167123/500x600",
       "birth": 792460800000,
-      "escolaridade": "medioCompleto",
+      "escolaridade": "doutorado",
       "tipo_aula": "presencial",
-      "materias": "Matemática, física",
+      "materias": "Matemática, física, química",
       "created_at": 1595213260860
     },
     {
@@ -69,26 +49,6 @@
       "tipo_aula": "ead",
       "materias": "Matemática, física",
       "created_at": 1595284277429
-    },
-    {
-      "id": 8,
-      "name": "Matheus Felizardo",
-      "avatar_url": "https://source.unsplash.com/collection/11167123/500x600",
-      "birth": 792460800000,
-      "escolaridade": "medioCompleto",
-      "tipo_aula": "ead",
-      "materias": "Matemática, física",
-      "created_at": 1595284293454
-    },
-    {
-      "id": 9,
-      "name": "Matheus Felizardo",
-      "avatar_url": "https://source.unsplash.com/collection/11167123/500x600",
-      "birth": 792460800000,
-      "escolaridade": "medioCompleto",
-      "tipo_aula": "ead",
-      "materias": "Matemática, física",
-      "created_at": 1595284326462
     }
   ]
 }

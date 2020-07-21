@@ -4,25 +4,27 @@
 
 {% block content %}
     
-    
-
-    <form class="card" method="POST" action="/teachers" >
-   
-
-        
+    <div class="card">  
 
         <section 
-        class="image" 
-        style ="background: url('') no-repeat">
+            class="image" 
+            style ="background: url('') no-repeat">
         </section>
-
+        
         <section class="details">
 
-            <p> Editar Instrutor</p>
+            <form method="POST" action="/teachers?_method=PUT">
+            <input type="hidden" name="id" value="{{teacher.id}}">
+                <p> Editar Instrutor</p>
+                {% include 'teacher-fields.njk' %}
+            </form>
 
-            {% include 'teacher-fields.njk' %}
-            
+            <form action="/teachers?_method=DELETE" method="post">
+                <input type="hidden" name="id" value="{{teacher.id}}">
+                <button id="delete" type="submit">Deletar</button>
+            </form>
+        
+            </section>
+        </div>
 
-        </section>
-    </form>
 {% endblock content %}
