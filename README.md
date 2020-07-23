@@ -28,8 +28,8 @@ Realizado para estudo da aplicabilidade de diversas funções relativos ao front
 
 ## :seedling: Requisitos Mínimos
 
-Node.Js. 
-Instalação das dependências: Express, nunjucks, intl, method-override
+- Node.Js. 
+- Instalação das dependências: Express, nunjucks, intl, method-override
 
 ## :rocket: Tecnologias Utilizadas 
 
