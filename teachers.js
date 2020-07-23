@@ -3,6 +3,22 @@ const data = require ("./data.json")
 const utils = require ("./utils")
 const intl = require ("intl")
 
+exports.index = function (req,res) {
+    
+    let teachers = data.teachers.map( teacher => {
+        const newTeacher = {
+            ...teacher,
+            materias: teacher.materias.split (",")
+        }
+        return newTeacher
+    })
+
+
+    return res.render("teachers", {teachers})
+
+    
+}
+
 exports.post = function (req,res) {
 
     const keys = Object.keys (req.body)
@@ -94,7 +110,8 @@ exports.put = function (req,res) {
          const teacher = {
         ...foundTeacher,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
         }
 
         data.teachers[index] = teacher

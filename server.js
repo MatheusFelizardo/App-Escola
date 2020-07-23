@@ -11,7 +11,7 @@ server.set ("view engine", "njk")
 nunjucks.configure ("views", {
     express: server, 
     autoescape: false,
-    noCache: false
+    noCache: true
 })
 
 server.use(express.static('public'))
