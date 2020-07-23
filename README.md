@@ -24,7 +24,7 @@ Site para buscas de professores para aulas particulares.
 
 ## :interrobang: Motivo
 
-Realizado para estudo da aplicabilidade de diversas funções relativos ao front-end e back-end
+Realizado para estudo da aplicabilidade de diversas funções relativas ao front-end e back-end.
 
 ## :seedling: Requisitos Mínimos
 
