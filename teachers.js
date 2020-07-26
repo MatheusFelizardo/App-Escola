@@ -14,10 +14,13 @@ exports.index = function (req,res) {
     })
 
 
-    return res.render("teachers", {teachers})
+    return res.render("./teachers/teachers", {teachers})
 
     
 }
+
+exports.create = function (req,res) {
+    return res.render ("./teachers/teacher-create") }
 
 exports.post = function (req,res) {
 
@@ -72,7 +75,7 @@ exports.show = function (req,res) {
         created_at: new intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
     }
 
-    return res.render("show-teacher", {teachers})
+    return res.render("./teachers/show-teacher", {teachers})
 }
 
 exports.edit = function (req,res) {
@@ -86,10 +89,10 @@ exports.edit = function (req,res) {
 
     const teacher = {
         ...foundTeacher,
-        birth: utils.date(foundTeacher.birth)
+        birth: utils.date(foundTeacher.birth).iso
     }
 
-    return res.render ("teacher-edit", {teacher})
+    return res.render ("./teachers/teacher-edit", {teacher})
 
 }
 

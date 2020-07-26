@@ -1,24 +1,35 @@
 {
+  "students": [
+    {
+      "id": 1,
+      "name": "Matheus Rodrigues Felizardo",
+      "email": "matheus.felizardo2@gmail.com",
+      "avatar_url": "https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=800",
+      "birth": 1015891200000,
+      "escolaridade": "terceiroM",
+      "carga_horaria": "6"
+    }
+  ],
   "teachers": [
     {
-      "id": 3,
+      "id": 1,
       "name": "João Pedro Fidelis",
-      "avatar_url": "https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      "birth": 792460800000,
+      "avatar_url": "https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500",
+      "birth": 700272000000,
       "escolaridade": "mestrado",
       "tipo_aula": "presencial",
       "materias": "Matemática, física, química",
-      "created_at": 1595213260860
+      "created_at": 1595542200781
     },
     {
-      "id": 5,
-      "name": "Marcia Nadine",
+      "id": 2,
+      "name": "Monique Souza Santos",
       "avatar_url": "https://images.unsplash.com/photo-1551863081-6ab80f1fa3cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      "birth": 666230400000,
-      "escolaridade": "superiorCompleto",
+      "birth": 705110400000,
+      "escolaridade": "mestrado",
       "tipo_aula": "presencial",
-      "materias": "Matemática, física",
-      "created_at": 1595217025292
+      "materias": "Português, Literatura, Inglês",
+      "created_at": 1595542258810
     }
   ]
 }

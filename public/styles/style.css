@@ -64,6 +64,12 @@ header a:hover::after {
     
 }
 
+.active {
+    width: 0;
+    color: #0C68A5;
+    font-weight: bold
+}
+
 /* == FORMATAÇÃO DO CARD == */
 
 .card {
@@ -186,7 +192,7 @@ p {
     font-weight: bold;
 }
 
-input[type=text], input[type=url], input[type=date] {
+input[type=text], input[type=url], input[type=date],input[type=email],input[type=number] {
     width: 80%;
     padding: 6px;
     font-size: 18px;
@@ -275,11 +281,20 @@ td,th {
     font-weight: 500;
 }
 
-.table-content table a {
+.table-content table a, #novoInstutor {
     background-color: #0C68A5;
     padding: 6px;
     border-radius: 4px;
     color: white;
+}
+
+#novoInstutor {
+    margin-bottom: 16px;
+    display: inline-block;
+    padding: 8px;
+    text-transform: uppercase;
+    margin-left: 2px;
+    
 }
 
 .table-content table th:last-child {
