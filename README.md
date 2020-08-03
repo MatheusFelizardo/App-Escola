@@ -29,7 +29,9 @@ Realizado para estudo da aplicabilidade de diversas funções relativos ao front
 ## :seedling: Requisitos Mínimos
 
 - Node.Js. 
-- Instalação das dependências: Express, nunjucks, intl, method-override
+- Instalação das dependências: Express, nunjucks, intl, method-override, pg
+- Criação da tabela no banco de dados de nome teachers contendo as linhas: name, avatar_url, birth, email, escolaridade e carga_horaria.
+- Criação da tabela no banco de dados de nome students contendo as linhas: name, avatar_url, birth, escolaridade, tipo_aula, materias e created_at.
 
 ## :rocket: Tecnologias Utilizadas 
 
