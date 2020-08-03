@@ -40,6 +40,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - CSS
 - Express
 - Nunjucks
+- PostgreSQL
 
 ## :link: Como contribuir 
 
