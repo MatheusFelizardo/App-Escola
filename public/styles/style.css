@@ -289,11 +289,12 @@ td,th {
 }
 
 #novoInstutor {
-    margin-bottom: 16px;
     display: inline-block;
     padding: 8px;
     text-transform: uppercase;
     margin-left: 2px;
+    align-self: baseline;
+    justify-self: baseline;
     
 }
 
@@ -328,4 +329,78 @@ tbody tr td:first-child {
     color: #0C68A5;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+
+
+/* FORMATAÇÃO DO TEACHER-HEADER PAGINA INDEX */
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.header-menu form {
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    margin-right: 40px;
+    gap: 10px;
+    align-self: baseline;
+    justify-self: baseline;
+    
+}
+
+.header-menu button#filtrar {
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    background-color: #0C68A5;
+    padding: 6px;
+    border-radius: 4px;
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    font-family: Roboto;
+    
+}
+
+.header-menu form input[type=text] {
+    height: 20px;
+    border: 1px solid #cccc;
+    margin: 0;
+    width: 90%;
+    border-radius: 4px;
+
+
+}
+
+/* PAGINATE */
+
+.table-content  {
+    display: grid;
+    grid-template: 64px 1fr 64px / 1fr;
+}
+
+.table-content .header-menu {
+    margin: 0;
+    align-self: initial;
+}
+
+.table-content .pagination {
+    margin: 0;
+    align-self: flex-end;
+    justify-self: center;
+
+}
+
+.table-content .pagination a {
+    text-decoration: none;
+    margin: 15px;
+    color: #0C68A5;
+    font-weight: bold;
+}
+
+.table-content .pagination a:hover {
+    border-bottom: 1px solid #0C68A5;
 }

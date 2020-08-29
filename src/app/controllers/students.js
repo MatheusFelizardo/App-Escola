@@ -1,28 +1,54 @@
 const {date, graduation, serie, age} = require ("../lib/utils")
 const Student = require ("../../models/Student")
+const { teachersOptions } = require("../../models/Student")
 
 
 module.exports = {
 
     index(req,res) {
+
+        let {filter, page, limit} = req.query
+
+        page = page || 1
+        limit = limit || 5 //limita
+
+        let offset = limit * (page - 1) // a partir do elemento
+
+       
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(students) {
+
+                students = students.map( student => {
+                    const newStudent = {
+                        ...student,
+                        escolaridade: serie(student.escolaridade)
+                    }
+                    return newStudent
+                })
+
+                let pagination = {
+                    total: Math.ceil(students[0].total/limit),
+                    page
+                }
+
+                return res.render("./students/students", {students, pagination, filter })  
+            }
+        }
+      
+        Student.paginate(params)
         
-        Student.all(function (students) {
-            
-            students = students.map( student => {
-               const newStudent = {
-                   ...student,
-                   escolaridade: serie(student.escolaridade)
-               }
-               return newStudent
-           })
-        
-           return res.render("./students/students", {students})
-        })
-    
     },
 
     create  (req,res) {
-    return res.render ("./students/create") 
+        
+        Student.teachersOptions  (function(teachers) {
+            return res.render ("./students/create", {teachers})
+        })
+   
     },
 
     post(req,res) {
@@ -48,11 +74,12 @@ module.exports = {
             students.age = age(students.birth)
             students.birthDay = date(students.birth).birthDay
             students.escolaridade = serie(students.escolaridade)
-                       
+        
+
             return res.render("./students/show", {students})
-
-
         })
+                       
+
 
     },
 
@@ -62,9 +89,13 @@ module.exports = {
             if (!students) return res.send ("Aluno não encontrado!")
 
             students.birth = date(students.birth).iso
-                        
-            return res.render ("./students/edit", {students})
+            
+            Student.teachersOptions(function (teachers){
+                return res.render ("./students/edit", {teachers, students})
 
+            }) 
+
+            
 
         })
     
@@ -98,5 +129,6 @@ module.exports = {
         })
   
 },
+
 
 }

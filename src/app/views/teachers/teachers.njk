@@ -6,7 +6,13 @@
     
     <div class="card table-content">
 
-        <a id="novoInstutor" href="/teachers/create">Novo instrutor</a>
+        <div class="header-menu">
+            <a id="novoInstutor" href="/teachers/create">Novo instrutor</a>
+            <form>
+            <input placeholder="Nome do professor / matéria" type="text" name="filter" value="{{filter}}">
+            <button id="filtrar" type="submit" >Filtrar</button>
+            </form>
+        </div>
 
         <table width="100%">
             <thead>
@@ -30,5 +36,10 @@
                  {% endfor %}
             </tbody>
         </table>
+
+        <div class="pagination" data-page="{{pagination.page}}"
+        data-total="{{pagination.total}}"
+        data-filter="{{filter}}"
+        ></div>
     </div>
 {% endblock content %}

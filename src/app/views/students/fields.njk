@@ -84,17 +84,38 @@
                     </select>
                 </div>
             </div>
+            
             <div class="item">
                 <div>Carga Horária Semanal</div>
+                    <div>
+                        <input required
+                        type="number" 
+                        name="carga_horaria"
+                        placeholder="Em horas"
+                        value="{{students.carga_horaria}}"
+                        >
+                    </div>
+            </div>
+
+            <div class="item">
+                <div>Professor</div>
                 <div>
-                    <input required
-                    type="number" 
-                    name="carga_horaria"
-                    placeholder="Em horas"
-                    value="{{students.carga_horaria}}"
-                    >
+                    <select name="teacher">
+                        {% for teacher in teachers %}
+                            <option value="{{teacher.id}}" {% if teacher.name == teacher.name %} selected 
+                            {% endif %}>                            
+                            {{teacher.name}}                   
+                            </option>
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
-            
 
-           <button id="salvar" type="submit">Salvar</button>
+            <button id="salvar" type="submit">Salvar</button>
+
+        </div>
+            
+           
+                    
+
+           

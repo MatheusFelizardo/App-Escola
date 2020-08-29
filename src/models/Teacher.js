@@ -1,10 +1,26 @@
 const {date} = require ("../app/lib/utils")
 const db = require ("../../src/config/db")
+const { off } = require("../../src/config/db")
 
 module.exports = {
 
     all(callback) {
-        db.query (`SELECT * FROM teachers`, function (err, results) {
+        db.query (`
+        SELECT * FROM teachers`, function (err, results) {
+
+            if (err) throw `Database error! ${err}` 
+            
+            callback(results.rows)
+        })
+    },
+
+    findBy(filter, callback) {
+        db.query (`
+        SELECT * 
+        FROM teachers
+        WHERE teachers.name ILIKE '%${filter}%'
+        OR teachers.materias ILIKE '%${filter}%'
+         `, function (err, results) {
 
             if (err) throw `Database error! ${err}` 
             
@@ -101,6 +117,46 @@ module.exports = {
             return callback()
             })
 
-    }
+    },
 
+    paginate(params){
+        let {filter, limit, offset, callback} = params
+
+        let query ="",
+            filterQuery ="",
+            totalQuery= `(
+                SELECT count(*) FROM teachers
+                ) AS total`
+
+
+        if (filter) {
+            
+            filterQuery = `            
+            WHERE teachers.name ILIKE '%${filter}%'
+            OR teachers.materias ILIKE '%${filter}%'
+            ` 
+
+            totalQuery = `(
+            SELECT count(*) FROM teachers
+            ${filterQuery}
+            )
+            AS total` 
+
+        }
+
+        query = `
+        SELECT teachers.*, ${totalQuery}, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (teachers.id = students.teacher_id)
+        ${filterQuery}
+        GROUP BY teachers.id LIMIT $1 OFFSET $2
+        `
+
+
+        db.query(query, [limit,offset], function (err, results) {
+            if (err) throw `Database error! ${err}` 
+            
+            callback(results.rows)
+        })
+    }
 }

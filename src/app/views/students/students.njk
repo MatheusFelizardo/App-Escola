@@ -6,27 +6,46 @@
     
     <div class="card table-content">
 
-        <a id="novoInstutor" href="/students/create">Novo Aluno</a>
+        
+        <div class="header-menu">
+            <a id="novoInstutor" href="/students/create">Novo Aluno</a>
+            <form>
+            <input placeholder="Nome do aluno ou e-mail" type="text" name="filter" value="{{filter}}">
+            <button id="filtrar" type="submit" >Filtrar</button>
+            </form>
+        </div>
+        
 
         <table width="100%">
             <thead>
                <tr>
                    <th>Nome completo</th>
                    <th>Ano Escolar</th>
+                   <th>Professor(a)</th>
                    <th>Ação</th>
                </tr>
             </thead>
             <tbody>
-                {% for student in students %}
+            
+            {% for student in students %}
                 <tr>
                     <td><span style="background-image: url({{student.avatar_url}})"></span>{{student.name}}</td>
                     <td>
                         {{student.escolaridade}}
                     </td>
+                
+                    <td>
+                        {{student.teacher_name}}
+                    </td>
+              
                     <td><a href="/students/{{student.id}}">Ver</a></td>
                 </tr>
-                 {% endfor %}
+            {% endfor %} 
             </tbody>
         </table>
+        <div class="pagination" data-page="{{pagination.page}}"
+        data-total="{{pagination.total}}"
+        data-filter="{{filter}}"
+        ></div>
     </div>
 {% endblock content %}
